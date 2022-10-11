@@ -1,0 +1,269 @@
+
+    /*font-family: 'Comfortaa', cursive;
+    font-family: 'Acme', sans-serif;
+    font-family: 'Carter One', cursive;
+    font-family: 'Caveat Brush', cursive;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Concert One', cursive;*/
+    
+/* Menu*/
+.flex-containerh {
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+    height: 200px;
+    background-color: rgb(151,243 ,191);
+}
+
+/*Contendeores del Menu*/
+.flex-containerh > .menu {  
+    background-color:rgb(0, 158, 198);
+    width: 15%;
+    margin: 20px;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 35px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Caveat Brush', cursive;
+      
+}
+
+.Icono {
+    background-color:rgb(0, 158, 198);
+    width: 15%;
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+/* Logo*/
+.logo {
+    height: 70%;
+    width: 70%;
+    max-width:1000px;
+    padding: 15px;
+  }
+
+
+/* Contenido del cuerpo y descrición */
+.container {
+    display: grid;
+background-color:rgb(151,243,191) ;
+    
+}
+
+.principal {grid-area: principal; background-color: crimson;}
+.header    { grid-area: header;    background-color:  rgb(151,243,191) }
+.izq       { grid-area: izq;       background-color: coral;  }
+.der       { grid-area: der;       background-color: coral;}
+.contenido { grid-area: contenido; background-color: rgb(241, 169, 133);}
+.pie       { grid-area: pie;       background-color: rgb(0, 247, 255);  }
+
+/* Contenido del cuerpo y descrición */
+.item {
+    padding: 10px;
+    color: darkgreen;
+    border-radius: 10px;
+    font-family: 'Comfortaa', cursive
+}
+
+
+
+/* Revisar el dieño responsivo del maquetado general*/
+@media only screen and (max-width: 800px) {
+    .container {
+        /* Uso un atajo para definir 4 filas / 2 columna */
+        grid-template: 100px auto auto 60px / 30% auto; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "header header" "izq contenido" "der der" "pie pie";
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        /* Uso un atajo para definir 6 filas / 1 columna */
+        grid-template: 100px auto auto auto 60px / 100%; 
+
+        /* Distribuimos el contenido en cada fila */
+        grid-template-areas: "header" "izq" "contenido" "der" "pie";
+    }
+}
+
+/* Maquetado de las imagenes*/
+.grid_container{
+    display: grid;
+    grid-template-columns: auto auto auto 
+    
+
+}
+/* Estilo de imagenes*/
+.imagen {width: 90%;
+        padding:5px;
+        border-radius: 15px;
+
+}
+
+/* Animacion de Imagenes*/
+.imagen:hover {
+    width: 95%;
+    padding: 5px
+}
+
+/* Responsivo de imagenes*/
+@media only screen and (max-width: 500px){
+    .grid_container{
+        display: grid;
+        grid-template-columns: auto auto 
+
+    }
+}
+
+/* Pie de Página*/
+.flex_fot{
+    display: flex;
+    background-color: rgb(0, 158, 198);
+    height: 60px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.ico {
+    padding: 10px;
+    padding-left:50px;
+    height: 70%;
+}
+
+/*Formato Formulario Contacto*/
+.contacto{
+    display:grid;
+    width: 100vh;
+    grid-template: auto auto auto auto /1fr 1.5fr;
+    grid-template-areas: "info_c comentario_c" 
+                        "info_c comentario_c" 
+                        "info_c comentario_c" 
+                        "enviar_c enviar_c";
+    
+    grid-gap: 1em;
+    background-color: aqua;
+    padding: 1.5em;
+    font-family: 'Comfortaa', cursive
+
+    }
+
+/*Formato Formulario Contacto*/    
+.contacto label {
+        display:block;
+    }
+
+.info_c input
+{
+    border:0;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.comentario_c input {
+    min-height: calc(100% - 2em);
+    width: 100%;
+    border:0;
+    
+}
+
+/*Formato Botón de Enviar*/
+button {
+    background: red;    
+        width: 100%;
+        height: 25px;
+        border-radius: 5px;
+        font-family: 'Comfortaa', cursive
+    }
+
+.info_c {
+        grid-area:info_c;
+    }
+.comentario_c {
+        grid-area:comentario_c;
+    }
+.enviar_c {
+        grid-area: enviar_c;
+        
+    }
+/*Formato Formulario Reserva*/
+.For_res{
+    display:grid;
+    width: 75vh;
+    grid-template: auto auto auto auto /1fr 1fr;
+    grid-template-areas: "sucursal_r comensales_r" 
+                            "fechas_r horario_r" 
+                            "info_r info_r" 
+                            "enviar_r enviar_r";
+    grid-gap: 1em;
+    background-color: aqua;
+    padding: 1.5em;
+    font-family: 'Comfortaa', cursive
+    }
+        
+.For_res label {
+    display:block;
+    }
+        
+.For_res input:not([type=radio]){
+    border:0;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 2px;
+    width: 100%;
+    }
+        
+.For_res select {
+    border:0;
+    padding: 2px;
+    margin: 4px;
+    border-radius: 2px;
+    width: 50%;
+        }
+        
+            
+button {
+    background: red;    
+    width: 100%;
+    height: 25px;
+    border-radius: 5px;
+        }
+        
+        
+        
+.sucursal_r {
+    grid-area:sucursal_r;
+        }
+        
+.comensales_r {
+    grid-area: comensales_r;
+        }
+
+.fechas_r {
+    grid-area: fechas_r;
+        }
+
+.horario_r {
+    grid-area: horario_r;
+    }
+.info_r {
+    grid-area: info_r;
+    }
+.enviar_r {
+    grid-area: enviar_r;
+    }   
+
+/*Sucursales*/    
+ .Sucursal {
+    font-family: 'Comfortaa', cursive   
+ }   
+ 
+ body {
+    background-color:rgb(74,196,187)}
